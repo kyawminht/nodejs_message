@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve static files (HTML, CSS, JS)
 app.use(express.static('public'));
 
+app.get('/test', (req, res) => {
+    res.send('Hello from Express!');
+});
 // Endpoint to handle form submission
 app.post('/send-messages', async (req, res) => {
   const { cookies, friendIds, message } = req.body;
