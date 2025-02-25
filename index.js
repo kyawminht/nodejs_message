@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files (HTML, CSS, JS)
 app.use(express.static('public'));
+// Enable CORS for all origins
+app.use(cors());
+
+app.use(express.json());
 
 app.get('/test', (req, res) => {
     res.send('Hello from Express!');
